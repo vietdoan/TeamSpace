@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('TeamSpace:server');
+var debug = require('debug')('web-server:server');
 var http = require('http');
 
 /**
