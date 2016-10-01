@@ -1,0 +1,112 @@
+/*-----------------------------------------*/
+/* BASIC SETUP */
+/*-----------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Lato", "Helvetica Neue", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+ }
+
+/*-----------------------------------------*/
+/* SIDEBAR*/
+/*-----------------------------------------*/
+
+#sidebar {
+    z-index: 1000;
+    position: fixed;
+    left: 0px;
+    width: 280px;
+    height: 100%;
+    overflow-y: auto;
+    background: #f7f7f7;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.user-toolbar {
+  height: 45px;
+  padding: 5px;
+  background-color: #16a085;
+  color: #fff;
+}
+
+.user-avatar img{
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 50%;
+}
+
+.user-name {
+  padding-left: 10px;
+}
+
+.user-arrow {
+  cursor: pointer;
+}
+
+.user-arrow:hover,
+.user-arrow:active {
+  color: #328ad6;
+}
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    width: 280px;
+    margin: 0;
+    padding-left: 10px;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    line-height: 38px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #1c1c1c;
+}
+
+#sidebar .fa {
+    padding-right: 15px;
+}
+
+.sidebar-nav li a .fa {
+  color: #b9b9b9;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+#sidebar .sidebarAction {
+  position: fixed;
+  bottom: 0px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  height: 42px;
+  width: 280px;
+}
+
+#sidebar .sidebarAction .sidebarAction-addList {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #328ad6;
+}
+
+
+#page-content-wrapper {
+    width: 100%;
+    position: relative;
+    padding-left: 280px;
+}
