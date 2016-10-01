@@ -10,6 +10,9 @@ angular.module('teamSpaceApp', ['ui.router','ngResource'])
       views: {
         'sidebar': {
           templateUrl: 'views/sidebar.html',
+        },
+        'content': {
+          templateUrl: 'views/content.html'
         }
       }
 

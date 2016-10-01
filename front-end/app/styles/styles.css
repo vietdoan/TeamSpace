@@ -1,44 +1,80 @@
 /*-----------------------------------------*/
+
+
 /* BASIC SETUP */
+
+
 /*-----------------------------------------*/
+
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow-x: hidden;
-    font-family: "Lato", "Helvetica Neue", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
- }
+  overflow-x: hidden;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
 
 /*-----------------------------------------*/
-/* SIDEBAR*/
+
+
+/* REUSABLE COMPONENTS */
+
+
+/*-----------------------------------------*/
+
+h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 150%;
+  word-spacing: 4px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+
+/*-----------------------------------------*/
+
+
+/* SIDEBAR */
+
+
 /*-----------------------------------------*/
 
 #sidebar {
-    z-index: 1000;
-    position: fixed;
-    left: 0px;
-    width: 280px;
-    height: 100%;
-    overflow-y: auto;
-    background: #f7f7f7;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  z-index: 1000;
+  position: fixed;
+  left: 0px;
+  width: 280px;
+  height: 100%;
+  overflow-y: auto;
+  background: #f7f7f7;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .user-toolbar {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
   height: 45px;
-  padding: 5px;
-  background-color: #16a085;
+  width: 280px;
+  padding: 8px 5px 5px 5px;
+  background-color: #658e86;
   color: #fff;
 }
 
-.user-avatar img{
+.user-avatar img {
   height: 30px !important;
   width: 30px !important;
   border-radius: 50%;
@@ -56,29 +92,30 @@ body {
 .user-arrow:active {
   color: #328ad6;
 }
+
+
 /* Sidebar Styles */
 
 .sidebar-nav {
-    position: absolute;
-    width: 280px;
-    margin: 0;
-    padding-left: 10px;
-    margin-top: 20px;
-    list-style: none;
+  position: absolute;
+  width: 280px;
+  margin: 0;
+  padding-left: 10px;
+  margin-top: 55px;
+  list-style: none;
 }
 
 .sidebar-nav li {
-    line-height: 38px;
+  line-height: 38px;
 }
 
 .sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #1c1c1c;
+  display: block;
+  color: #1c1c1c;
 }
 
 #sidebar .fa {
-    padding-right: 15px;
+  padding-right: 15px;
 }
 
 .sidebar-nav li a .fa {
@@ -87,12 +124,15 @@ body {
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 #sidebar .sidebarAction {
   position: fixed;
   bottom: 0px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  z-index: 1001;
+  background-color: #f7f7f7;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   height: 42px;
   width: 280px;
 }
@@ -105,8 +145,41 @@ body {
 }
 
 
-#page-content-wrapper {
-    width: 100%;
-    position: relative;
-    padding-left: 280px;
+/*-----------------------------------------*/
+
+
+/* Content*/
+
+
+/*-----------------------------------------*/
+
+.content {
+  width: 100%;
+  position: relative;
+  padding-left: 280px;
+}
+
+.content .topbar {
+  width: 100%;
+  z-index: 1001;
+  height: 45px;
+  background-color: #7BB0A6;
+  position: fixed;
+  top: 0px;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+.content .main-content {
+  padding-top: 42px;
+  background-image: url(../images/background/workspace.jpg);
+  background-size: cover;
+  background-position: 210px;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.topbar a .fa {
+  color: #fff;
+  margin-right: 20px;
 }
