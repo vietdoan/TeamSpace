@@ -1,0 +1,283 @@
+/*-----------------------------------------*/
+
+
+/* BASIC SETUP */
+
+
+/*-----------------------------------------*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+/*-----------------------------------------*/
+
+
+/* REUSABLE COMPONENTS */
+
+
+/*-----------------------------------------*/
+
+h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 150%;
+  word-spacing: 4px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+
+/*-----------------------------------------*/
+
+
+/* SIDEBAR */
+
+
+/*-----------------------------------------*/
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 0px;
+  width: 280px;
+  height: 100%;
+  overflow-y: auto;
+  background: #f7f7f7;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.user-toolbar {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  height: 45px;
+  width: 280px;
+  padding: 8px 5px 5px 5px;
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+.user-avatar img {
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 50%;
+}
+
+.user-name {
+  padding-left: 10px;
+}
+
+.user-arrow {
+  cursor: pointer;
+}
+
+.user-arrow:hover,
+.user-arrow:active {
+  color: #328ad6;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  width: 280px;
+  margin: 0;
+  margin-top: 55px;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  line-height: 38px;
+  padding-left: 10px;
+}
+
+.sidebar-nav li:hover {
+  background-color: #e0eefa;
+}
+.sidebar-nav li a {
+  display: block;
+  color: #1c1c1c;
+}
+
+#sidebar .fa {
+  padding-right: 15px;
+}
+
+.sidebar-nav li a .fa {
+  color: #b9b9b9;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+#sidebar .sidebarAction {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1001;
+  background-color: #f7f7f7;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: 42px;
+  width: 280px;
+}
+
+#sidebar .sidebarAction .sidebarAction-addList {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #328ad6;
+}
+
+
+/*-----------------------------------------*/
+
+
+/* Content*/
+
+
+/*-----------------------------------------*/
+
+.content {
+  width: 100%;
+  position: relative;
+  padding-left: 280px;
+}
+
+.content .topbar {
+  width: 100%;
+  z-index: 1001;
+  height: 45px;
+  background-color: #34495e;
+  position: fixed;
+  top: 0px;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+.content .main-content {
+  background-image: url(../images/background/wood-leaf2.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+  padding: 57px 0 0 0;
+}
+
+.topbar a .fa {
+  color: #fff;
+  margin-right: 20px;
+}
+
+.btn-outline {
+  color: #fff;
+  background-color: #34495e;
+  opacity: 0.8;
+  border-color: #563d7c;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #fff;
+  background-color: #34495e;
+  border-color: #34495e;
+  opacity: 1;
+}
+
+.task-list {
+  padding-top: 20px;
+  width: 100%;
+  list-style: none;
+}
+
+.show-grid li {
+  margin-top: 5px;
+  padding: 8px 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.8;
+  color: #4d4d4d;
+}
+
+.show-grid li:hover {
+  background-color: #EDEFF0;
+  border-bottom-color: #D6DADC;
+  opacity: 1;
+}
+
+/*-----------------------------------------*/
+
+
+/* Login */
+
+
+/*-----------------------------------------*/
+
+.login-container {
+  background-color: #eee;
+  width: 100%;
+  height: 100vh;
+  padding-top: 8%;
+  padding-left: 30%;
+}
+
+.login-box {
+  background-color: #fff;
+  width: 560px;
+  height: 500px;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  font-weight: 400;
+}
+
+.login-box h1 {
+  color: #4d4d4d;
+  margin-top: 20px;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.login-box h5 {
+  margin-top: 20px;
+  color: #a3a3ae;
+}
+
+.login-header {
+  background-color: #34495e;
+  height: 60px;
+
+}
+
+.form-control {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-block {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
