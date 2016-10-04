@@ -1,4 +1,17 @@
-# TeamSpace
-TeamSpace là công cụ giúp người dùng dễ dàng kết nối, quản lý công việc của từng cá nhân trong 1 team và tiến độ dự án.
+Team03 Project: TeamSpace
+=========================
 
-Biên bản cuộc họp các tuần: https://docs.google.com/document/d/1yfcIRRwLF139E0KK221XhAoAtlmnNp7vfNUdVVNSVBY/edit?usp=sharing
+Desciption
+----------
+TeamSpace is a useful tool designed to organize, manage multiple work projects and keep track your team's progress.
+
+Rules
+----------
+* Create a new branch for the current story you are working on.
+* Merge a pull request into the master branch when work is completed.
+* Follow the coding convention for javascript in this link https://github.com/airbnb/javascript
+* Must have fun!
+
+Weekly meeting minutes
+----------
+* https://docs.google.com/document/d/1yfcIRRwLF139E0KK221XhAoAtlmnNp7vfNUdVVNSVBY/edit?usp=sharing
