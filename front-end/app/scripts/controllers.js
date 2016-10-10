@@ -1,32 +1,32 @@
 'use strict';
 
-angular.module('TeamSpaceApp')
-  .controller('SidebarController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
-
-    var sidebarItem = [
+var sidebarItem = [
+  {
+    name: 'Software Engineering',
+    tasks: [
       {
-        name: 'Software Engineering',
-        task: [
-          {
-            desctiption: 'Code+demo final presentation'
+        desctiption: 'Code+demo final presentation'
           },
-          {
-            desctiption: 'Type up design guide'
+      {
+        desctiption: 'Type up design guide'
           },
-          {
-            desctiption: 'Tutorials Adobe Illustrator'
+      {
+        desctiption: 'Tutorials Adobe Illustrator'
           }
         ]
       },
-      {
-        name: 'Database'
+  {
+    name: 'Database'
       }
     ];
-    var user = {
-      name: "vietdoan"
-    };
+var user = {
+  name: "vietdoan"
+};
 
-    /************************************************************************/
+/************************************************************************/
+
+angular.module('TeamSpaceApp')
+  .controller('SidebarController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
 
     var avatar = user.name.charAt(0);
     avatar = avatar.toUpperCase() + ".png";
@@ -39,11 +39,23 @@ angular.module('TeamSpaceApp')
         template: 'views/create_group.html',
         scope: $scope,
         className: 'ngdialog-theme-default',
-        controller: "SidebarController"
+        controller: "CreateGroupController"
       });
     };
 
+
+
 }])
   .controller('ContentController', ['$scope', function ($scope) {
+    $scope.tasks = sidebarItem[0].tasks;
+}])
+  .controller('CreateGroupController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+
+    $scope.group = {};
+    $scope.doAddNewGroup = function () {
+      $scope.sidebarItem.push($scope.group);
+      ngDialog.close();
+
+    };
 
 }]);
