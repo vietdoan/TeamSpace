@@ -1,5 +1,5 @@
 'use strict';
-console.log(1);
+
 angular.module('TeamSpaceApp')
   .controller('SidebarController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
 
@@ -11,8 +11,15 @@ angular.module('TeamSpaceApp')
         name: 'Software Engineering'
       }
     ];
+    var user = {
+      name: "vietdoan"
+    };
+    var avatar = user.name.charAt(0);
+    avatar = avatar.toUpperCase() + ".png";
+    console.log(avatar);
     $scope.sidebarItem = sidebarItem;
-
+    $scope.user = user;
+    $scope.avatar = avatar;
     $scope.openCreateGroup = function () {
       ngDialog.open({
         template: 'views/create_group.html',
