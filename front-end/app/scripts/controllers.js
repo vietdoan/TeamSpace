@@ -5,15 +5,29 @@ angular.module('TeamSpaceApp')
 
     var sidebarItem = [
       {
-        name: 'Database'
+        name: 'Software Engineering',
+        task: [
+          {
+            desctiption: 'Code+demo final presentation'
+          },
+          {
+            desctiption: 'Type up design guide'
+          },
+          {
+            desctiption: 'Tutorials Adobe Illustrator'
+          }
+        ]
       },
       {
-        name: 'Software Engineering'
+        name: 'Database'
       }
     ];
     var user = {
       name: "vietdoan"
     };
+
+    /************************************************************************/
+
     var avatar = user.name.charAt(0);
     avatar = avatar.toUpperCase() + ".png";
     console.log(avatar);
