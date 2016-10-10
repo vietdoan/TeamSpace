@@ -281,3 +281,18 @@ a:hover {
   margin-right: auto;
 }
 
+/*-----------------------------------------*/
+
+
+/* Group */
+
+
+/*-----------------------------------------*/
+
+.ngdialog-message .form-control{
+  width: 100%;
+}
+
+.ngdialog-message h4 {
+  text-align: center;
+}

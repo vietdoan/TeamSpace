@@ -22,20 +22,13 @@
     </div>
   </div>
   <ul class="sidebar-nav">
-    <li>
-      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>  Database<br></a>
+    <li ng-repeat='item in sidebarItem'>
+      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>{{item.name}}<br></a>
     </li>
-    <li>
-      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>  Database<br></a>
-    </li>
-    <li>
-      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>  Cơ sở dữ liệu<br></a>
-    </li>
-
   </ul>
   <div class="sidebarAction">
     <div class="sidebarAction-addList">
-      <i class="fa fa-plus-square-o fa-lg"></i> Create Group </a>
+      <a ng-click="openCreateGroup()"><i class="fa fa-plus-square-o fa-lg"></i> Create Group </a>
     </div>
   </div>
 </div>
