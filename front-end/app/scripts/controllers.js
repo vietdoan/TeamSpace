@@ -3,6 +3,7 @@
 var sidebarItem = [
   {
     name: 'Software Engineering',
+    id: 0,
     tasks: [
       {
         desctiption: 'Code+demo final presentation'
@@ -16,7 +17,19 @@ var sidebarItem = [
         ]
       },
   {
-    name: 'Database'
+    name: 'Database',
+    id: 1,
+    tasks: [
+      {
+        desctiption: 'Probability, statistics chapter 3'
+          },
+      {
+        desctiption: 'Probability, statistics chapter 4'
+          },
+      {
+        desctiption: 'Probability, statistics chapter 5'
+          }
+        ]
       }
     ];
 var user = {
@@ -26,11 +39,11 @@ var user = {
 /************************************************************************/
 
 angular.module('TeamSpaceApp')
-  .controller('SidebarController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+  .controller('SidebarController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
 
     var avatar = user.name.charAt(0);
     avatar = avatar.toUpperCase() + ".png";
-    console.log(avatar);
+
     $scope.sidebarItem = sidebarItem;
     $scope.user = user;
     $scope.avatar = avatar;
@@ -43,19 +56,30 @@ angular.module('TeamSpaceApp')
       });
     };
 
+    $scope.select = function (id) {
+      $rootScope.$broadcast('change-content', {
+        id: id
+      });
+    };
 
-
-}])
-  .controller('ContentController', ['$scope', function ($scope) {
+      }])
+  .controller('ContentController', ['$scope', '$rootScope', function ($scope, $rootScope) {
     $scope.tasks = sidebarItem[0].tasks;
-}])
-  .controller('CreateGroupController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+    $scope.$on('change-content', function (event, args) {
 
-    $scope.group = {};
+      var id = args.id;
+      $scope.tasks = sidebarItem[id].tasks;
+    });
+}])
+  .controller('CreateGroupController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
+
+    $scope.group = {
+      id: sidebarItem.length,
+      tasks: []
+    };
     $scope.doAddNewGroup = function () {
       $scope.sidebarItem.push($scope.group);
       ngDialog.close();
-
     };
 
 }]);
