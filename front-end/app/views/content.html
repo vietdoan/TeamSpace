@@ -31,14 +31,8 @@
         <div class="row show-grid">
           <div class="col-xs-10">
             <ul class="task-list">
-              <li>
-                Code+demo final presentation
-              </li>
-              <li>
-                Type up design guide
-              </li>
-              <li>
-                Tutorials Adobe Illustrator
+              <li ng-repeat='task in tasks'>
+                {{task.desctiption}}
               </li>
             </ul>
           </div>

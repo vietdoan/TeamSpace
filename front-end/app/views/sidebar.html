@@ -2,11 +2,11 @@
   <div class="user-toolbar">
     <div class="user">
       <span class="user-avatar">
-                  <img src="images/alphabet/V.png">
+                  <img ng-src="images/alphabet/{{avatar}}">
                 </span>
       <div class="btn-group">
         <span class="user-name">
-                    vietdoan
+                    {{user.name}}
                   </span>
         <span class="user-arrow" data-toggle="dropdown">
                     <i class="fa fa-caret-down"></i>
@@ -22,20 +22,13 @@
     </div>
   </div>
   <ul class="sidebar-nav">
-    <li>
-      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>  Database<br></a>
+    <li ng-repeat='item in sidebarItem'>
+      <a href="" ng-click="select(item.id)"><i class="fa fa-calendar-check-o fa-lg"></i>{{item.name}}<br></a>
     </li>
-    <li>
-      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>  Database<br></a>
-    </li>
-    <li>
-      <a href="#"><i class="fa fa-calendar-check-o fa-lg"></i>  Cơ sở dữ liệu<br></a>
-    </li>
-
   </ul>
   <div class="sidebarAction">
     <div class="sidebarAction-addList">
-      <i class="fa fa-plus-square-o fa-lg"></i> Create Group </a>
+      <a ng-click="openCreateGroup()"><i class="fa fa-plus-square-o fa-lg"></i> Create Group </a>
     </div>
   </div>
 </div>

@@ -1,6 +1,5 @@
 'use strict';
-
-angular.module('teamSpaceApp', ['ui.router','ngResource'])
+angular.module('TeamSpaceApp', ['ui.router', 'ngResource', 'ngDialog'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
@@ -10,13 +9,14 @@ angular.module('teamSpaceApp', ['ui.router','ngResource'])
       views: {
         'sidebar': {
           templateUrl: 'views/sidebar.html',
+          controller: 'SidebarController'
         },
         'content': {
-          templateUrl: 'views/content.html'
+          templateUrl: 'views/content.html',
+          controller: 'ContentController'
         }
       }
 
-    })
-
+    });
     $urlRouterProvider.otherwise('/');
   });
