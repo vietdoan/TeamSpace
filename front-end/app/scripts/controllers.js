@@ -52,7 +52,7 @@ angular.module('TeamSpaceApp')
         template: 'views/create_group.html',
         scope: $scope,
         className: 'ngdialog-theme-default',
-        controller: "CreateGroupController"
+        controller: 'CreateGroupController'
       });
     };
 
@@ -63,13 +63,21 @@ angular.module('TeamSpaceApp')
     };
 
       }])
-  .controller('ContentController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+  .controller('ContentController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
     $scope.tasks = sidebarItem[0].tasks;
     $scope.$on('change-content', function (event, args) {
 
       var id = args.id;
       $scope.tasks = sidebarItem[id].tasks;
     });
+    $scope.openAddTasks = function() {
+      ngDialog.open({
+        template: 'views/add_task.html',
+        scope: $scope,
+        className: 'ngdialog-theme-default'
+        //controller: 'AddNewTasks'
+      });
+    };
 }])
   .controller('CreateGroupController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
 
