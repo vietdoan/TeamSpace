@@ -35,6 +35,7 @@ var sidebarItem = [
 var user = {
   name: "vietdoan"
 };
+var id = 0;
 
 /************************************************************************/
 
@@ -52,24 +53,32 @@ angular.module('TeamSpaceApp')
         template: 'views/create_group.html',
         scope: $scope,
         className: 'ngdialog-theme-default',
-        controller: "CreateGroupController"
+        controller: 'CreateGroupController'
       });
     };
 
-    $scope.select = function (id) {
+    $scope.select = function (index) {
       $rootScope.$broadcast('change-content', {
-        id: id
+        id: index
       });
     };
 
       }])
-  .controller('ContentController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+  .controller('ContentController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
     $scope.tasks = sidebarItem[0].tasks;
     $scope.$on('change-content', function (event, args) {
 
-      var id = args.id;
+      id = args.id;
       $scope.tasks = sidebarItem[id].tasks;
     });
+    $scope.openAddTasks = function () {
+      ngDialog.open({
+        template: 'views/add_task.html',
+        scope: $scope,
+        className: 'ngdialog-theme-default',
+        controller: 'TasksController'
+      });
+    };
 }])
   .controller('CreateGroupController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
 
@@ -79,6 +88,18 @@ angular.module('TeamSpaceApp')
     };
     $scope.doAddNewGroup = function () {
       $scope.sidebarItem.push($scope.group);
+      ngDialog.close();
+    };
+
+}])
+  .controller('TasksController', ['$scope', '$rootScope', 'ngDialog', function ($scope, $rootScope, ngDialog) {
+
+    $scope.task = {
+      desctiption: ''
+    };
+    $scope.doAddNewTask = function () {
+      console.log(1);
+      $scope.sidebarItemp[id].tasks.push($scope.task);
       ngDialog.close();
     };
 
